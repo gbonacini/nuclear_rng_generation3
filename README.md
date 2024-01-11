@@ -3,7 +3,7 @@ Introduction:
 
 This project is the third variation of the theme "creation of RNG generators based on nuclear decay",  you can find the other two implementations here:
 
-[NuclearRNG Version 1](https://github.com/gbonacini/nuclear_random_number_generator)
+[NuclearRNG Version 1](https://github.com/gbonacini/nuclear_random_number_generator)<BR>
 [NuclearRNG Version 2](https://github.com/gbonacini/nuclear_rng_generation2)
 
 This version, differently from the previous two, does not use a Geiger–Müller tube nor a classic Geiger counter but an array of PIN diodes prodiced by Teviso company, named BG51:
@@ -12,7 +12,7 @@ This version, differently from the previous two, does not use a Geiger–Müller
 
 Using that component, the implementation of the present appliance is greatly simplified, avoiding all the high voltage circuitry necessary to operate a Geiger tube. Furthermore, the small dimensions of the component permits to implement a very compact device.
 
-TODO ![alt text](./screenshots/appliance.jpg "Appliance")
+[alt text](./screenshots/appliance.jpg "Appliance")
 
 Hardware:
 =========
@@ -20,8 +20,6 @@ Hardware:
 * A Raspberry Pico (RP2040) is employed as microcontroller platform;
 * A BG51 radiation sensor;
 * Some circuitry to filter the power source and to convert the logic level of the sensor output.
-
-TODO ![alt text](./screenshots/ampl.jpg "Amplifier")
 
 Hardware Details:
 =================
