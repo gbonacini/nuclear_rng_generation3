@@ -12,7 +12,7 @@ This version, differently from the previous two, does not use a Geiger–Müller
 
 Using that component, the implementation of the present appliance is greatly simplified, avoiding all the high voltage circuitry necessary to operate a Geiger tube. Furthermore, the small dimensions of the component permits to implement a very compact device.
 
-[alt text](./screenshots/appliance.jpg "Appliance")
+![alt text](./screenshots/appliance.jpg "Appliance")
 
 Hardware:
 =========
