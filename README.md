@@ -35,7 +35,7 @@ Hardware Details:
 
 * A circuit to stabilize input voltage is required, I tested also with boards different from Pico having the same results: being the sensor sensible to rumor in the power supply, a filter is mandatory. Testing without filtering in power input, produced distorsions in the output.  I implemented a filter using the specifications in Teviso's manuals and all problems disappeared.
 
-* I tried to use 3V as power source for the sensor but I had problems, I haven't time to investigate, so I opted for 5V and a small logic level converter. This operation could be made with many different solution, I used my own.
+*  Datasheet tell us that at least 4V are required, so I opted for 5V and a small logic level converter to interface the sensor to Pico's 3V logic. This operation could be made with many different solution, I used my own.
 ![alt text](./screenshots/sensor.jpg "Test")
 ![alt text](./screenshots/bboard.jpg "Circuit")
 
@@ -43,10 +43,7 @@ Hardware Details:
 Algorithm and Features:
 =======================
 
-This doesn't present variation compared to version 2:
-
-* Two thread are in execution : one for Geiger pulses sampling, another to provide RNGs via socket;
-* In the main loop, a register is cyclically increased from 0 to 15, when it reaches 15 is reset to 0. When a particle is detected, the current value is stored in queue ready to be deployed on request;
+* In loop, a register with a representation od an unsigned intege is cyclically increased from 0 to its maximum value, when it reaches the maximim it restart from zero. When a particle is detected, the current value is stored in queue ready to be deployed on request;
 * Default queue length is 10240 bytes.
 
 Protocol:
