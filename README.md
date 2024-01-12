@@ -6,7 +6,7 @@ This project is the third variation of the theme "creation of RNG generators bas
 [NuclearRNG Version 1](https://github.com/gbonacini/nuclear_random_number_generator)<BR>
 [NuclearRNG Version 2](https://github.com/gbonacini/nuclear_rng_generation2)
 
-This version, differently from the previous two, does not use a Geiger–Müller tube nor a classic Geiger counter but an array of PIN diodes prodiced by Teviso company, named BG51:
+This version, differently from the previous two, does not use a Geiger–Müller tube nor a classic Geiger counter but an array of PIN diodes produced by Teviso company, named BG51:
  
 [BG51 Datasheet](https://www.teviso.com/file/pdf/bg51-data-specification.pdf)
 
@@ -24,7 +24,7 @@ Hardware:
 Hardware Details:
 =================
 
-* As radiation source, a piece of ceramic colored with uranium oxideis employed. It comes from a salt / pepper dispanser I purchased set from the 50s, unfortunately one was damaged, the handle was broken and that peace is now, temporalely the source of this appliance:
+* As radiation source, a piece of ceramic coated with uranium oxide is employed. It comes from a salt / pepper dispenser I purchased set from the 50s, unfortunately one was damaged, the handle was broken and that peace is now temporarily the source of this appliance:
 ![alt text](./screenshots/source_1.jpg "Source")
 ![alt text](./screenshots/source_2.jpg "Source 2")
 
@@ -33,7 +33,7 @@ Hardware Details:
 ![alt text](./screenshots/chamber_2.jpg "Chamber 2")
 ![alt text](./screenshots/assembly_1.jpg "Chamber 2")
 
-* A circuit to stabilize input voltage is required, I tested also with boards different from Pico having the same results: being the sensor sensible to rumor in the power supply, a filter is mandatory. Testing without filtering in power input, produced distorsions in the output.  I implemented a filter using the specifications in Teviso's manuals and all problems disappeared.
+* A circuit to stabilize input voltage is required, I tested also with boards different from Pico having the same results: being the sensor sensible to rumor in the power supply, a filter is mandatory. Testing without filtering in power input, produced distortions in the output.  I implemented a filter using the specifications in Teviso's manuals and all problems disappeared.
 
 *  Datasheet tell us that at least 4V are required, so I opted for 5V and a small logic level converter to interface the sensor to Pico's 3V logic. This operation could be made with many different solution, I used my own.
 ![alt text](./screenshots/sensor.jpg "Test")
@@ -43,7 +43,7 @@ Hardware Details:
 Algorithm and Features:
 =======================
 
-* In loop, a register with a representation od an unsigned intege is cyclically increased from 0 to its maximum value, when it reaches the maximim it restart from zero. When a particle is detected, the current value is stored in queue ready to be deployed on request;
+* In loop, a register with a representation od an unsigned integer is cyclically increased from 0 to its maximum value, when it reaches the maximum it restarts from zero. When a particle is detected, the current value is stored in queue ready to be deployed on request;
 * Default queue length is 10240 bytes.
 
 Protocol:
@@ -64,7 +64,7 @@ req
 ```
 <sp><sp><sp>where:
   - the first field is a random number in the range 0-15 or the number 16 if an error was generated or no number is available yet;
-  - the second field represent the original value of the register incremented in loop to extract the random number using module operator of integer divisionby the specific range (0-255, 8-bit integers), it's provided as safeguard to verify that the loop cover every possible value for a given event frequency; 
+  - the second field represent the original value of the register incremented in loop to extract the random number using module operator of integer division by the specific range (0-255, 8-bit integers), it's provided as safeguard to verify that the loop cover every possible value for a given event frequency; 
   - the separator is the character ':';
   - then a field with an integer telling you how many RNs are available in the appliance buffer, ready to be requested;
   - a newline ( '\n' ) ends the message.
