@@ -112,6 +112,7 @@ Credits:
 ========
 
 - Thanks to Teviso company (https://www.teviso.com) that kindly provided the sensor for this project;
+- Thanks to my friend Andrea ( https://github.com/btlgs2000 ) for his help to test this applicance.
 
 
 Coming soon:
