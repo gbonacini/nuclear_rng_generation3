@@ -107,3 +107,9 @@ geiger_gen3.uf2
   putting the Pico in "deploy mode" pushing the white button before connecting USB cable and releasing the same button a second after the connection.
 - A trivial Python client example is present in "test" directory in the present software distribution.
 - The number can be requested from any program able to create Berkeley sockets using the described protocol.
+
+Credits:
+========
+
+- Thanks to Teviso company (https://www.teviso.com) that kindly provided the sensor for this project;
+
