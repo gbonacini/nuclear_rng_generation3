@@ -60,7 +60,7 @@ req
 ```
 * Then you'll receive a RN in an answer with the following format:
 ```shell
-<random_number>i<separator><generator_number><separator><available_numbers><newline>
+<random_number><separator><generator_number><separator><available_numbers><newline>
 ```
 <sp><sp><sp>where:
   - the first field is a random number in the range 0-15 or the number 16 if an error was generated or no number is available yet;
